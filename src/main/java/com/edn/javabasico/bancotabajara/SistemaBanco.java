@@ -6,10 +6,7 @@ public class SistemaBanco {
         OperacaoBancaria operacaoBancaria = new OperacaoBancaria();
 
         // edney acessando a conta
-        Conta contaEdy = new Conta();
-        contaEdy.nomeCliente = "Edney Roldao";
-        contaEdy.numero = 200;
-        contaEdy.saldo = 5000.00;
+        Conta contaEdy = new Conta( "Edney Roldao", 5000.00, "corrente");
 
         contaEdy.exibirSaldo();
 
@@ -20,15 +17,15 @@ public class SistemaBanco {
 
         operacaoBancaria.sacar(contaEdy, 20000.00);
 
-        Conta contaAbner = new Conta();
-        contaAbner.saldo = 3000.00;
-        contaAbner.numero = 1;
-        contaAbner.nomeCliente = "Abner Souza";
+        Conta contaAbner = new Conta("Abner Souza", 3000.00, "corrente");
 
         operacaoBancaria.transferir(contaEdy, contaAbner, 5000.00);
 
         contaAbner.exibirSaldo();
         contaEdy.exibirSaldo();
+
+        System.out.println(contaEdy.getNumero());
+        System.out.println(contaAbner.getNumero());
     }
 
 }

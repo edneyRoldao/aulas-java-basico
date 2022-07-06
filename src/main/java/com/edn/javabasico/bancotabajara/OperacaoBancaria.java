@@ -3,27 +3,27 @@ package com.edn.javabasico.bancotabajara;
 public class OperacaoBancaria {
 
     void depositar(Conta conta, Double valor) {
-        conta.saldo = conta.saldo + valor;
+        conta.setSaldo(conta.getSaldo() + valor);
     }
 
     Double sacar(Conta conta, Double valor) {
-        if (conta.saldo < valor) {
-            System.out.println(conta.nomeCliente + " seu saldo e insulficiente");
+        if (conta.getSaldo() < valor) {
+            System.out.println(conta.getNomeCliente() + " seu saldo e insulficiente");
             System.out.println("valor desejado: " + valor);
-            System.out.println("valor em conta: " + conta.saldo);
-            return conta.saldo;
+            System.out.println("valor em conta: " + conta.getSaldo());
+            return conta.getSaldo();
         }
 
-        conta.saldo = conta.saldo - valor;
+        conta.setSaldo(conta.getSaldo() - valor);
 
-        return conta.saldo;
+        return conta.getSaldo();
     }
 
     void transferir(Conta contaSaida, Conta contaEntrada, Double valor) {
-        if (contaSaida.saldo < valor) {
-            System.out.println(contaSaida.nomeCliente + " seu saldo e insulficiente");
+        if (contaSaida.getSaldo() < valor) {
+            System.out.println(contaSaida.getNomeCliente() + " seu saldo e insulficiente");
             System.out.println("valor desejado: " + valor);
-            System.out.println("valor em conta: " + contaSaida.saldo);
+            System.out.println("valor em conta: " + contaSaida.getSaldo());
             return;
         }
 
