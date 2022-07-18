@@ -10,14 +10,14 @@ public class SistemaBanco {
         c1.setNomeCliente("Edney Roldao");
         c1.setNumero(1277);
         c1.setAgencia(25);
-        c1.setTipoConta("corrente");
+        c1.setTipoConta(TipoConta.CORRETE);
         c1.setSaldo(1000.00);
 
         Conta c2 = new Conta();
         c2.setNomeCliente("Erick");
         c2.setNumero(1277);
         c2.setAgencia(25);
-        c2.setTipoConta("corrente");
+        c2.setTipoConta(TipoConta.POUPANCA);
         c2.setSaldo(3000.00);
 
         // edney deseja ver o saldo
@@ -38,8 +38,8 @@ public class SistemaBanco {
         c1.exibirSaldoEmTela();
         c2.exibirSaldoEmTela();
 
-
         System.out.println(c2);
+        c2.exibirTipoConta();
         c2.exibirCodigoReferenciaMemoria();
     }
 

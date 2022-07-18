@@ -6,12 +6,16 @@ public class Conta {
     private Integer numero;
     private String nomeCliente;
     private Integer agencia;
-    private String tipoConta;
+    private TipoConta tipoConta;
     private Double saldo;
 
     public void exibirSaldoEmTela() {
         String msgSaldo = String.format("%s seu saldo é %s", nomeCliente, saldo);
         System.out.println(msgSaldo);
+    }
+
+    public void exibirTipoConta() {
+        System.out.println(tipoConta.name());
     }
 
     // getters and setters
@@ -39,11 +43,11 @@ public class Conta {
         this.agencia = agencia;
     }
 
-    public String getTipoConta() {
+    public TipoConta getTipoConta() {
         return tipoConta;
     }
 
-    public void setTipoConta(String tp) {
+    public void setTipoConta(TipoConta tp) {
         tipoConta = tp;
     }
 
